@@ -65,11 +65,10 @@ class node {
    * @param zStart
    * @return none
    */
-  node(int, int, int, int, int);
+  node(int, int);
   /**@brief function to set the private members start
    * @param xStart
    * @param yStart
-   * @param Value
    * @return none
    */
   int getxIndex();
@@ -87,7 +86,7 @@ class node {
    * @param none
    * @return int
    */
-  int getfValue() const;
+  int getfValue();
   /**@brief function to calculate fValue
    * @param xStart
    * @param yStart
