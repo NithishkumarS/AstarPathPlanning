@@ -34,6 +34,9 @@
 
 #pragma once
 
+#include <list>
+#include <vector>
+
 /** @brief class that stores and computes the total cost, heuristic cost
  *         and movement cost
  *
@@ -52,6 +55,8 @@ class node {
   int yIndex;
   int gValue;
   int fValue;
+  std::list< std::vector<int> > openList, closedList;
+
 
  public:
     /**@brief function to set the private members start
