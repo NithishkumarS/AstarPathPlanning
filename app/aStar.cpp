@@ -21,37 +21,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-/** @file node.hpp
- *
- * @brief Class declaration for environment
- *
- * @author Nithish Sanjeev Kumar
- * @navigator Nantha Kumar Sunder
- * @copyright 2019 , Nithish Sanjeev Kumar, Nantha Kumar Sunder All rights reserved
 
- */
-#pragma once
-#include <vector>
+#include "aStar.hpp"
 
-/** @brief class that stores and create the grid and its paramters
- *
- *  @param size           size of the grid
- *  @param grid           contains the map
- *  @param movementCost   contains movement cost
- *
- *  @return none
- */
+void aStar::setStart(int _xStart_, int _yStart_) {
+  xStart = _xStart_;
+  yStart = _yStart_;
+}
 
-class environment {
- private:
-  std::vector<int> size;
-  std::vector<std::vector<int>> grid;
-  std::vector<int> movementCost;
- public:
-  /**@brief constructor function
- * @param vector
- * @param vector
- * @return none
- */
-  environment(std::vector<int>, std::vector<int>);
-};
+void aStar::setGoal(int _xGoal_, int _yGoal_) {
+  xGoal = _xGoal_;
+  yGoal = _yGoal_;
+}
+int aStar::getxStart() {
+  return xStart;
+}
+int aStar::getyStart() {
+  return yStart;
+}
+int aStar::getxGoal() {
+  return xGoal;
+}
+
+int aStar::getyGoal() {
+  return yGoal;
+}
+
+void aStar::pathPlanning() {
+}
+
+void aStar::aStar() {
+}
+aStar::~aStar() {
+}
