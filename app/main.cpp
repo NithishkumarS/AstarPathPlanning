@@ -24,12 +24,20 @@
 #include <iostream>
 #include <vector>
 #include "environment.hpp"
+#include "node.hpp"
+#include "aStar.hpp"
 
 int main()
 {
     std::vector<int> size = {5,5};
     std::vector<int> movementCost = {10,14};
     environment envObj(size,movementCost);
-
+    int xStartPos = 0;
+    int yStartPos = 0;
+    node nodeObj(xStartPos,yStartPos);
+    aStar aStarObj;
+    aStarObj.setStart(0,0);
+    aStarObj.setGoal(0,3);
+    aStarObj.pathPlanning(envObj, nodeObj);
     return 0;
 }

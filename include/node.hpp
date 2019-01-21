@@ -55,7 +55,7 @@ class node {
   int yIndex;
   int gValue;
   int fValue;
-  std::list< std::vector<int> > openList, closedList;
+
 
 
  public:
@@ -77,6 +77,16 @@ class node {
    * @return xIndex
    */
   int getyIndex();
+  /**@brief function to to get y IndexValue
+   * @param none
+   * @return yIndex
+   */
+  void setxIndex(int);
+    /**@brief function to get x IndexValue
+   * @param none
+   * @return xIndex
+   */
+  void setyIndex(int);
   /**@brief function to to get y IndexValue
    * @param none
    * @return yIndex

@@ -22,12 +22,17 @@
  * SOFTWARE.
  */
 #include "environment.hpp"
+
+
+int environment::getGrid(int x, int y){
+  return grid[x][y];
+}
  /**@brief class constructor
    * @param _size_ to send the size information of the grid
    * @param _movementCost_ has the movementCost for the grid
    * @return none
    */
-void environment::environment(std::vector<int> _size_, std::vector<int> _movementCost_){
+environment::environment(std::vector<int> _size_, std::vector<int> _movementCost_){
   size = _size_;
   movementCost = _movementCost_;
   std::vector<std::vector<int>> grid;

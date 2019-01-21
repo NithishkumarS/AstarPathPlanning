@@ -48,6 +48,7 @@ class environment {
   std::vector<std::vector<int>> grid;
   std::vector<int> movementCost;
  public:
+  int getGrid(int, int);
   /**@brief constructor function
  * @param vector
  * @param vector

@@ -35,6 +35,7 @@
 
 #pragma once
 #include "node.hpp"
+#include "environment.hpp"
 #include <string.h>
 
 /** @brief Class to implement each node
@@ -48,7 +49,7 @@ class aStar {
 
   int xStart, yStart;
   int xGoal, yGoal;
-
+  std::list< std::vector<int> > openList, closedList;
  public:
 
   /**@brief function to set the private members start
@@ -90,8 +91,12 @@ class aStar {
    */
   int getyGoal();
 
-  void pathPlanning();
+  void pathPlanning(environment&, node&);
 
+  std::vector<int> minOpenList(std::vector<std::vector<int>>);
+  bool checkNeighbour(std::vector<int>,std::vector<int>);
+  bool checkClosedList(std::vector<int>);
+  bool checkOpenList(std::vector<int>);
   /**@brief constructor to initialize the class aStar
    * @param none
    * @return none
