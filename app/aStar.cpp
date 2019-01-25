@@ -24,7 +24,9 @@
 
 #include <iostream>
 #include <list>
+#include <cmath>
 #include <vector>
+#include <iterator>
 #include "aStar.hpp"
 
 
@@ -52,8 +54,8 @@ int aStar::getyGoal() {
 }
 std::vector<int> aStar::minOpenList(std::vector<std::vector<int>> costMap){
   std::vector<int> minVector, tempVector, min;
-  int size = openList.size();
-  tempVector = openList[0];
+  std::list<std::vector<int>>::iterator it = openList.begin();
+  tempVector = *it;
   int minCostValue = tempVector[2];
   minVector = tempVector;
   for (auto & i:openList){
@@ -103,7 +105,9 @@ void aStar::pathPlanning(environment& envObj, node& nodeObj) {
  int yIndex = nodeObj.getyIndex();
  std::vector<std::vector<int>> fCostMat;
  std::vector<std::vector<std::vector<int>>> parentNode;
+ std::vector<int> temp,start;
  fCostMat.resize(5);
+
  for (auto & i : parentNode){
    i.resize(5);
    for (auto & j :i){
@@ -133,6 +137,19 @@ void aStar::pathPlanning(environment& envObj, node& nodeObj) {
 
    if ((curVector[0] == xGoal) && (curVector[1] == yGoal)){
      //display();
+
+     temp.push_back(yGoal);
+
+     temp.push_back(xGoal);
+
+     start.push_back(yStart);
+     start.push_back(xStart);
+     while (temp != start )
+     {
+       envObj.setGrid(temp[0], temp[1]);
+       temp = parentNode[temp[0]][temp[1]];
+         std::cout<<"end";}
+
      break;
    }
    for ( auto & i : openList){

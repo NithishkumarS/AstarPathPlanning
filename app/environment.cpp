@@ -55,3 +55,8 @@ environment::environment(std::vector<int> _size_, std::vector<int> _movementCost
     }
   }
 }
+void environment::setGrid(int x, int y){
+  grid[x][y] = 2;
+}
+
+environment::~environment(){}

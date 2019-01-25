@@ -54,5 +54,7 @@ class environment {
  * @param vector
  * @return none
  */
+  void setGrid(int , int );
   environment(std::vector<int>, std::vector<int>);
+  ~environment();
 };
